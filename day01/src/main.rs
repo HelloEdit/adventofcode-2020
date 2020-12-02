@@ -9,7 +9,7 @@ fn ex1(numbers: &Vec<u32>) -> () {
     }
 }
 
-/// Find the two entries that sum to 2020 and then multiply those two numbers together.
+/// Find the three entries that sum to 2020 and then multiply those three numbers together.
 fn ex1bis(numbers: &Vec<u32>) -> () {
     for first in numbers {
         for second in numbers {
@@ -27,7 +27,6 @@ fn ex1bis(numbers: &Vec<u32>) -> () {
     }
 }
 
-/// Find the three entries that sum to 2020 and then multiply those three numbers together.
 fn main() -> Result<(), std::io::Error> {
     use std::fs;
 
