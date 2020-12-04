@@ -4,7 +4,7 @@ import { readFileSync } from "fs";
  * Find the two entries that sum to 2020 and then multiply those two numbers together.
  * @param {Array<number>} numbers availables numbers
  */
-function ex1(numbers) {
+function day01(numbers) {
   for (const first of numbers) {
     for (const second of numbers) {
       if (first + second == 2020) return console.log(`1st: ${first * second}`);
@@ -16,7 +16,7 @@ function ex1(numbers) {
  * Find the three entries that sum to 2020 and then multiply those three numbers together.
  * @param {Array<number>} numbers availables numbers
  */
-function ex1bis(numbers) {
+function day01bis(numbers) {
   for (const first of numbers) {
     for (const second of numbers) {
       const middle = first + second;
@@ -33,5 +33,5 @@ const numbers = readFileSync("./day01/input.txt", "utf-8")
   .split("\n")
   .map((i) => Number.parseInt(i));
 
-ex1(numbers);
-ex1bis(numbers);
+day01(numbers);
+day01bis(numbers);

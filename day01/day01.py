@@ -1,7 +1,7 @@
 from typing import List
 
 
-def exo1(numbers: List[int]):
+def day01(numbers: List[int]):
     """Find the two entries that sum to 2020 and then multiply those two numbers together."""
     for first in numbers:
         for second in numbers:
@@ -9,7 +9,7 @@ def exo1(numbers: List[int]):
                 return print("1st: {}".format(first * second))
 
 
-def exo1bis(numbers: List[int]):
+def day01bis(numbers: List[int]):
     """Find the three entries that sum to 2020 and then multiply those three numbers together."""
     for first in numbers:
         for second in numbers:
@@ -27,5 +27,5 @@ if __name__ == "__main__":
     with open("./day01/input.txt") as file:
         numbers = [int(x) for x in file.readlines()]
 
-    exo1(numbers)
-    exo1bis(numbers)
+    day01(numbers)
+    day01bis(numbers)

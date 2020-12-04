@@ -20,12 +20,12 @@ def walk(plan: List[List[str]], right: int, down: int):
     return result
 
 
-def ex3(plan: List[List[str]]):
+def day03(plan: List[List[str]]):
     """Count all the trees encountered for the slope right 3, down 1."""
     print("1st: {}".format(walk(plan, right=3, down=1)))
 
 
-def ex3bis(plan: List[List[str]]):
+def day03bis(plan: List[List[str]]):
     """Count all the trees encountered for differents slopes then calculate the product."""
     result = walk(plan, right=1, down=1) * \
         walk(plan, right=3, down=1) * \
@@ -41,5 +41,5 @@ if __name__ == "__main__":
     with open("./day03/input.txt") as file:
         plan = [list(x) for x in file.readlines()]
 
-    ex3(plan)
-    ex3bis(plan)
+    day03(plan)
+    day03bis(plan)
