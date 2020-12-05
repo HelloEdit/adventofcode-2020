@@ -11,8 +11,8 @@ def walk(plan: List[List[str]], right: int, down: int):
     while y < len(plan):
         x %= width
 
-        current = plan[y][x]
-        result += 1 if current == "#" else 0
+        if plan[y][x] == "#":
+            result += 1
 
         x += right
         y += down
