@@ -3,13 +3,13 @@ from typing import List
 
 def walk(plan: List[List[str]], right: int, down: int):
     """Walk throught the map."""
-    wwidth = len(plan[0]) - 1
+    width = len(plan[0]) - 1
 
     x = 0
     y = 0
     result = 0
     while y < len(plan):
-        x %= wwidth
+        x %= width
 
         current = plan[y][x]
         result += 1 if current == "#" else 0
