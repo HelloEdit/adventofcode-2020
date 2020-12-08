@@ -4,42 +4,6 @@ import re
 FIELDS_REQUIRED = ["byr:", "iyr:", "eyr:", "hgt:", "hcl:", "ecl:", "pid:"]
 
 
-def day04(passports: List[str]):
-    """Count the number of passports that have all the required fields."""
-    correct = 0
-    for entry in passports:
-        if all(field in entry for field in FIELDS_REQUIRED):
-            correct += 1
-
-    print("1st: {}".format(correct))
-
-
-def day04bis(passports: List[str]):
-    """Count the number of passports that have all required fields and valid values."""
-    separator = re.compile(r":| ")
-
-    correct = 0
-    for entry in passports:
-        entry = entry.replace("\n", " ").strip()
-        fields = separator.split(entry)
-
-        if len(fields) < 14:
-            continue
-
-        # check if all required fields are here
-        if not all(required in entry for required in FIELDS_REQUIRED):
-            continue
-
-        # check fields
-        check = all(check_field(fields[i], fields[i + 1])
-                    for i in range(0, len(fields), 2))
-
-        if check:
-            correct += 1
-
-    print("2nd: {}".format(correct))
-
-
 def check_field(name: str, value: str):
     """Check validity of specific field."""
     hcl = re.compile("^#[0-9a-f]{6}$")
@@ -83,6 +47,42 @@ def check_field(name: str, value: str):
 
     else:
         return False
+
+
+def day04(passports: List[str]):
+    """Count the number of passports that have all the required fields."""
+    correct = 0
+    for entry in passports:
+        if all(field in entry for field in FIELDS_REQUIRED):
+            correct += 1
+
+    print("1st: {}".format(correct))
+
+
+def day04bis(passports: List[str]):
+    """Count the number of passports that have all required fields and valid values."""
+    separator = re.compile(r":| ")
+
+    correct = 0
+    for entry in passports:
+        entry = entry.replace("\n", " ").strip()
+        fields = separator.split(entry)
+
+        if len(fields) < 14:
+            continue
+
+        # check if all required fields are here
+        if not all(required in entry for required in FIELDS_REQUIRED):
+            continue
+
+        # check fields
+        check = all(check_field(fields[i], fields[i + 1])
+                    for i in range(0, len(fields), 2))
+
+        if check:
+            correct += 1
+
+    print("2nd: {}".format(correct))
 
 
 if __name__ == "__main__":
