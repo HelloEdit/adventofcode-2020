@@ -2,7 +2,7 @@ from typing import List
 
 
 def execute(code: List[str]):
-    """Run a copy of the boot."""
+    """Run a copy of the boot code."""
     seen = set()
     acc = 0
 
@@ -38,7 +38,7 @@ def day08(code: List[str]):
 
 
 def day08bis(code: List[str]):
-    """Fix the program by by trying out all the possibilities."""
+    """Fix the program by trying all the possibilities."""
 
     # this is ugly and I apologize
     for (index, line) in enumerate(code):
